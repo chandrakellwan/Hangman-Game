@@ -75,6 +75,12 @@ function Game() {
 					//win
 					this.win();
 				}
+
+     	
+
+
+
+
 			} else {
 				//if no match found, letter added to the guessLetters
 				this.guessLetters.nodeValue += letter.toUpperCase() + " , ";
@@ -109,21 +115,13 @@ function Game() {
 		// Make this play sound effect;
 
 		waiting = true;
+		this.wins = this.wins + 1;
+
+      // tracks number of wins
+      document.querySelector("#wins").innerHTML = this.wins;
 	};
 
-	this.lose = function(){
-		//kill any DJs based on the number of missing letters
-		var missingLetters = this.remainingLetters;
-		for (var i = 1; i <= missingLetters; i++){
-			if(this.DJs.length-i >= 0){
-				this.DJs[this.DJs.length-1].kill(this);
-			}
-		}
-		
-		//starts a newWord
-		//this.newWord();
-		waiting = true;
-	};
+	
 
 	this.newWord = function(){
 		waiting = false;
@@ -169,6 +167,16 @@ function Game() {
 		
 	};
 }
+
+
+
+
+
+
+
+
+
+
 //call function globally
 function randBetween(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
