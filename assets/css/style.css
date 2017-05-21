@@ -2,121 +2,136 @@ html, body{
 	height:100%;
 	width: 100%;
 }
+/*controls leftPurple section*/
+#leftPurple {
+		float:left;
+		height: 100%;
+		width: 31%;
+		background: Rebeccapurple;
+		
+	}
+/*controls wrong guessed letters section*/
+	#myGuess {
 
-#DJbooth{
+		padding-left: 5px;
+		padding-top: 40px;	
+		padding-right: 5px;
+		font-size: 15px;
 	
+	}
+
+		#myGuess p {
+		
+		font-size: 20px;
+		color: white;
+		padding-left: 5px;
 	
+	}
+		#myGuess h3{
+		padding-left: 10px;
+		clear:both;
+	}
+
+	/*controls guessCount section*/
+		#guessCount p{
+
+		font-size: 24px;
+		float: left;
+	}
+
+		#guessLetters {
+
+		display: inline-block;
+		position: relative;
+		top:50%;
+		transform: translate(0, -50%);
+		color: white;
+		font-size: 30px;
+
+	}
+
+/*this controls the DJ boothArea and DJ image*/
+#boothArea{
 	height: 100%;
-	width: 40%;
+	width: 38%;
 	float: left;
-	background: blue;
+	background: navy;
 }
 
+	p {
+		height: 80px;
+	}
 
-	h1 {
+
+	h2 {
+		margin-top: 30px;
+		padding-bottom: 30px;
+		font-weight: bold;
 		color: red;
 		text-align: center;
-		font-size: 45px;
+		font-size: 40px;
 	}
 	
 	img {
 
 		float:none;
-		
 		width: 95%;
 		padding-left: 13px;
-		padding-top: -25px;
+			
+	}
+
+	/*controls the PuzzleArea and Puzzle*/
+
+/*puzzle is in this ID*/
+	
 		
+	#myPuzzleArea {
+			background: navy;
+			height: 40%;
+		}
+
+		#myPuzzleArea h1{
+
+			color: white;
+			display: inline-block;
+			position: relative;
+			top: 40%;
+			left: 50%;
+			font-size: 40px;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			clear: both;
 	}
 	
+	/*controls the score area*/
 	
-	
-	
-	
-	#scoreKeeper {
-		background: red;
+#scoreKeeper {
+		float: right;
+		background: lavender;
 		box-sizing: border-box;
 		padding: 20px;
-		height: 20%;
-		width: 100%;
+		height: 100%;
+		width: 31%;
 	}
-	#scoreKeeper p {
+		#scoreKeeper p {
 		float:left;
 		margin-right: 96px;
-		font-size: 16px;
+		font-size: 20px;
 		margin-top: 16px;
 		margin-left: 10px;
 		color: #000000;
 	}
-	#scoreKeeper img {
+		#scoreKeeper img {
 		height: 48px;
 		width: auto;
 		float: left;
 		clear: both;
 	}
 
-/*Controls the game board*/
-#gamePlay{
+
+
 	
-	padding-top: 0px;
-	float:left;
-	height: 100%;
-	width: 50%%;
-	clear: both;
-}
-	/*Puzzle is in thie div ID*/
-	#myCanvas {
-		float:left;
-		height: 100%;
-		width: 500px;
-		background: purple;
-		clear: both;
-	}
+	
+	
 
-		#myCanvas h1{
-			display: inline-block;
-			position: relative;
-			top: 50%;
-			left: 50%;
-			font-size: 60px;
-			transform: translate(-50%, -50%);
-			text-align: center;
-			clear: both;
-	}
-
-	#myGuess{
-		padding-top: 40px;
-		padding-right: 350px;
-		float: none;
-		height: 33%;
-		width: 100%;
-	}
-	#myGuess p {
-		font-size: 20px;
-		color: white;
-		padding-left: 5px;
-		float:left;
-		margin: 15px;
-		margin-right: 0;
-	}
-	#myGuess h3{
-		clear:both;
-	}
-	#guessLetters {
-		display: inline-block;
-		position: relative;
-		top:50%;
-		transform: translate(0, -50%);
-		font-color: #ffffff;
-		font-size: 30px;
-
-	}
-
-	.container-title {
-		font-size: 20px;
-		color: white;
-		padding-left: 20px;
-
-
-		
-	}
+	

@@ -1,0 +1,136 @@
+html, body{
+	height:100%;
+	width: 100%;
+}
+
+#leftPurple {
+		float:left;
+		height: 100%;
+		width: 35%;
+		background: purple;
+
+		
+	}
+
+#myGuess {
+
+		padding-top: 20px;	
+		padding-left: 20px;
+		
+		font-size: 20px;
+		
+		margin-left: 0px;
+		
+	}
+
+
+
+	#myGuess p {
+		font-size: 20px;
+		color: white;
+		padding-left: 25px;
+		float:left;
+		
+		margin-right: 0;
+	}
+	#myGuess h3{
+		clear:both;
+	}
+	#guessLetters {
+
+		display: inline-block;
+		position: relative;
+		top:50%;
+		transform: translate(0, -50%);
+		font-color: #ffffff;
+		font-size: 30px;
+
+	}
+
+
+#DJbooth{
+	
+	
+	height: 100%;
+	width: 40%;
+	float: left;
+	background: blue;
+}
+
+	p {
+		height: 80px;
+	}
+
+
+	h1 {
+		color: red;
+		text-align: center;
+		font-size: 45px;
+	}
+	
+	img {
+
+		float:none;
+		height: 80%;
+		
+		width: 95%;
+		padding-left: 13px;
+		padding-top: -25px;
+		
+	}
+
+	/*Controls the game board*/
+#gamePlay{
+	
+	padding-top: 0px;
+	float:left;
+	height: 100%;
+	width: 50%%;
+	clear: both;
+}
+/*Puzzle is in this ID*/
+	
+
+		#myCanvas h1{
+			display: inline-block;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			font-size: 60px;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			clear: both;
+	}
+	
+	
+	
+	#scoreKeeper {
+		float: right;
+		background: red;
+		box-sizing: border-box;
+		padding: 20px;
+		height: 100%;
+		width: 25%;
+	}
+	#scoreKeeper p {
+		float:left;
+		margin-right: 96px;
+		font-size: 16px;
+		margin-top: 16px;
+		margin-left: 10px;
+		color: #000000;
+	}
+	#scoreKeeper img {
+		height: 48px;
+		width: auto;
+		float: left;
+		clear: both;
+	}
+
+
+
+	
+	
+	
+
+	

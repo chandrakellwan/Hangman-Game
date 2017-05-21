@@ -1,63 +1,41 @@
 <!doctype html>
 <html lang= "en-us">
-	<head>
+<head>
 		<meta charset="utf-8">
 		<title>Hang the DJ</title>
 		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-	</head>
-	<body>
-
-	<div id = "gamePlay">
-			<div id = "myCanvas">
-				<h1 id = "myPuzzle"></h1>
-				<div id = "myGuess">
+</head>
+<body>
+	<!-- Middle div for DJ and game -->
+		<div id = "leftPurple">	
+			<div id = "myGuess">
 				<p>Guesses Until Hanged:</p>
 				<p id="guessCount">7</p>
+				<hr>
+				<p>Wrong Letters:</p>
 				<h3 id ="guessLetters"> </h3>
+			</div>	
+		</div>		
 
-					<div class='side-container'>
-         				<div class='container-title'>Guessed Letters:</div>
-        				<div id="wrong-letters" class='input-area'></div>
-      				</div>
-				</div>
-			</div>
-			
-					</div>
-
-		<!-- Middle div for DJ and game -->
-		<div id = "DJbooth">
-				<h1>Hang - the - DJ</h1>
+		<div id = "boothArea">
+				<h2>Hang - the - DJ</h2>
 			<div id = "DJ">
-					<img src="assets/images/dj.jpg">
+					<img src="assets/images/dj0.jpg" class="img-responsive" alt="DJpic" id ="DJstage">
 				</div>
-
-
-				
-				</div>
-
-				
-				
-			
+			<div id = "myPuzzleArea">
+				<h1 id = "myPuzzle"></h1>
+			</div>
+		</div>			
 			<!-- This section keeps score stuff-->
-			<div id = "scoreKeeper">
-			<!--find record image to put here -->
+		<div id = "scoreKeeper">
+				<p> Won:</p>
 				<p id = "winScore">0</p>
 				<!-- This keeps track of losses -->
-			<!-- Find img of DJ gear -->
+				<p>Lost:</p>
 				<p id = "loseScore">0</p>
-			</div>
-
-		
-
-	
+		</div>
 		<script type="text/javascript" src="assets/javascript/game.js"></script>
-
-
-		<script type="text/javascript" src="assets/javascript/wordLibrary.js"></script>
-
-		
-
 	</body>
 </html>
