@@ -6,6 +6,7 @@ var wordList = ["mixer", "club", "treble", "nightlife", "turntables", "hangover"
 var DJstage = 0;
 
 var imgDJstage = document.getElementById("Djstage");
+var winSound = new Audio ("assets/images/winsound.mp3");
 
 
 //runs game
@@ -28,7 +29,7 @@ function Game() {
 
 
 	//collection of DJs
-	this.DJs = [];
+	this.DJstage = [];
 
 	this.guess = function(letter){
 		var i = 0;
@@ -52,7 +53,7 @@ function Game() {
 			//see if guess is in the current puzzle
 			for (w = 0; w < this.words.length; w++){
 				puzzleString = this.puzzle.childNodes[w*2].nodeValue;
-				for (i =0;i< this.words[w].length; i++){
+				for (i =0; i< this.words[w].length; i++){
 					if (this.words[w][i].toLowerCase() === letter){
 						//if any letter matches, it shows up in the correct spot
 						txt += " "+letter.toUpperCase();
@@ -76,12 +77,8 @@ function Game() {
 					this.win();
 				}
 
-     	
 
-
-
-
-			} else {
+				} else {
 				//if no match found, letter added to the guessLetters
 				this.guessLetters.nodeValue += letter.toUpperCase() + " , ";
 				//remaining guesses decrease by -1
@@ -91,8 +88,8 @@ function Game() {
 					//lose
 
 					this.lose();
-				} else if (this.guessCount === Math.floor(globalGuessCount/0) ){
-					//stage all DJs
+				} else if (this.guessCount === Math.floor(globalGuessCount) ){
+					
 					for (var i= 0;i < this.DJs.length;i++){
 						this.DJs[i].stage();
 					}
@@ -111,13 +108,14 @@ function Game() {
 		}
 	};
 
+	// tracks number of wins
 	this.win = function() {
 		// Make this play sound effect;
-
+		
 		waiting = true;
 		this.wins = this.wins + 1;
 
-      // tracks number of wins
+     
       document.querySelector("#wins").innerHTML = this.wins;
 	};
 
@@ -127,8 +125,6 @@ function Game() {
 		waiting = false;
 		var rand = randBetween(0,myWords.length-1);
 		this.word = myWords[rand];
-		myWords.splice(rand,1);
-		//split the chosen word into array
 		this.words = this.word.split(" ");
 		this.remainingLetters = 0;
 		//clears old puzzle
@@ -169,14 +165,6 @@ function Game() {
 }
 
 
-
-
-
-
-
-
-
-
 //call function globally
 function randBetween(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -186,14 +174,14 @@ var globalGuessCount = 7;
 var myGame = new Game();
 var myWords = wordList;
 var waiting = true;
-var winScore = 0;
+var wins = 0;
 var loseScore = 0;
 var DJstage = 0;
 
 
 
-function addPictures(guessCount) {
-  switch (guessCount) {
+function addPictures(globalguessCount) {
+  switch (globalguessCount) {
     case 0:
       $('#DJstage').children("img").remove();
       $('#DJstage').append('<img src="assets/images/dj0.jpg">');
@@ -220,7 +208,7 @@ function addPictures(guessCount) {
       break;
     case 6:
        $('#DJstage').children("img").remove();
-      $('#DJ').append('<img src="assets/images/dj6.jpg">');
+      $('#DJstage').append('<img src="assets/images/dj6.jpg">');
       break;
     case 7:
       $('#DJstage').children("img").remove();
