@@ -29,10 +29,6 @@ function Game() {
 	this.DJstage = document.getElementById("DJstage");
 
 
-
-
-
-
 function addPictures (guessCount) {
   switch (guessCount) {
     case 0:
@@ -146,6 +142,18 @@ function addPictures (guessCount) {
 		}
 	};
 
+	
+
+	this.lose = function() {
+
+		var missingLetters = this.remainingLetters;
+ 		for (var i = 1; i <= missingLetters; i++)
+
+		waiting = true;
+		new word();
+
+	}
+
 	// tracks number of wins
 	this.win = function() {
 		// Make this play sound effect;
@@ -156,13 +164,6 @@ function addPictures (guessCount) {
      
       document.querySelector("#wins").innerHTML = this.wins;
 	};
-
-	this.lose = function() {
-
-		waiting = false;
-		new word();
-
-	}
 
 	this.newWord = function(){
 		waiting = false;
