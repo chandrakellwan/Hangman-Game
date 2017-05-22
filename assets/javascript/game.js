@@ -1,12 +1,12 @@
 
 
-var wordList = ["mixer", "club", "treble", "nightlife", "turntables", "hangover", "requests", "bass", "speakers", "headphones", "microphone", "vinyl"];
+var wordList = ["records", "mixer", "club", "treble", "nightlife", "turntables", "hangover", "requests", "bass", "speakers", "headphones", "microphone", "vinyl"];
 
 
 var DJstage = 0;
 
 var imgDJstage = document.getElementById("Djstage");
-var winSound = new Audio ("assets/images/winsound.mp3");
+var winSound = new Audio ("assets/sound/winsound.mp3");
 
 
 //runs game
@@ -25,7 +25,42 @@ function Game() {
 	this.words = [];
 	this.guesses= [];
 	this.wins= 0;
-	this.remainingLetters = 50;
+	this.remainingLetters = 5000;
+	this.DJstage = document.getElementById("DJstage");
+
+
+
+
+
+
+function addPictures (guessCount) {
+  switch (guessCount) {
+    case 0:
+      $('#DJstage').attr('src', 'assets/images/dj0.jpg');
+      break;
+    case 1:
+      $('#DJstage').attr('src', 'assets/images/dj1.jpg');
+      break;
+    case 2:
+      $('#DJstage').attr('src', 'assets/images/dj2.jpg');
+      break;
+    case 3:
+      $('#DJstage').attr('src', 'assets/images/dj3.jpg');
+      break;
+    case 4:
+      $('#DJstage').attr('src', 'assets/images/dj4.jpg');
+      break;
+    case 5:
+      $('#DJstage').attr('src', 'assets/images/dj5.jpg');
+      break;
+    case 6:
+      $('#DJstage').attr('src', 'assets/images/dj6.jpg');
+      break;
+    case 7:
+      $('#DJstage').attr('src', 'assets/images/dj7.jpg');
+      break;
+  }
+}
 
 
 	//collection of DJs
@@ -73,8 +108,9 @@ function Game() {
 				//check if the puzzle is finished
 				
 				if (this.remainingLetters === 0){
-					//win
+
 					this.win();
+					winsound.play();
 				}
 
 
@@ -84,20 +120,22 @@ function Game() {
 				//remaining guesses decrease by -1
 				this.guessCount -= 1;
 				this.guessCountNode.nodeValue = this.guessCount;
+
 				if (this.guessCount === 0 ){
 					//lose
+
+				
 
 					this.lose();
 				} else if (this.guessCount === Math.floor(globalGuessCount) ){
 					
 					for (var i= 0;i < this.DJs.length;i++){
-						this.DJs[i].stage();
+						this.DJstage[i].stage();
 					}
-				//} else if (this.guessCount === Math.floor(globalGuessCount*2/3) ){
-					//stage some DJs
+				
 					for (var i= 0;i < this.DJs.length;i++){
 						if (Math.random() < 0.5){
-							this.DJs[i].stage();
+							this.DJs[i].Djstage();
 						}
 					}
 				}
@@ -119,7 +157,12 @@ function Game() {
       document.querySelector("#wins").innerHTML = this.wins;
 	};
 
-	
+	this.lose = function() {
+
+		waiting = false;
+		new word();
+
+	}
 
 	this.newWord = function(){
 		waiting = false;
@@ -180,41 +223,6 @@ var DJstage = 0;
 
 
 
-function addPictures(globalguessCount) {
-  switch (globalguessCount) {
-    case 0:
-      $('#DJstage').children("img").remove();
-      $('#DJstage').append('<img src="assets/images/dj0.jpg">');
-      break;
-    case 1:
-      $('#DJstage').children("img").remove();
-      $('#DJstage').append('<img src="assets/images/dj1.jpg">');
-      break;
-    case 2:
-       $('#DJstage').children("img").remove();
-      $('#DJstage').append('<img src="assets/images/dj2.jpg">');
-      break;
-    case 3:
-       $('#DJstage').children("img").remove();
-      $('#DJstage').append('<img src="assets/images/dj3.jpg">');
-      break;
-    case 4:
-       $('#DJstage').children("img").remove();
-      $('#DJstage').append('<img src="assets/images/dj4.jpg">');
-      break;
-    case 5:
-       $('#DJstage').children("img").remove();
-      $('#DJstage').append('<img src="assets/images/dj5.jpg">');
-      break;
-    case 6:
-       $('#DJstage').children("img").remove();
-      $('#DJstage').append('<img src="assets/images/dj6.jpg">');
-      break;
-    case 7:
-      $('#DJstage').children("img").remove();
-      $('#DJstage').append('<img src="assets/images/dj7.jpg">');
-      break;
-  }
-}
+
 
 
