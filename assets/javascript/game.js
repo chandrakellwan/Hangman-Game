@@ -144,15 +144,7 @@ function addPictures (guessCount) {
 
 	
 
-	this.lose = function() {
-
-		var missingLetters = this.remainingLetters;
- 		for (var i = 1; i <= missingLetters; i++)
-
-		waiting = true;
-		new word();
-
-	}
+	
 
 	// tracks number of wins
 	this.win = function() {
@@ -164,6 +156,20 @@ function addPictures (guessCount) {
      
       document.querySelector("#wins").innerHTML = this.wins;
 	};
+
+
+
+this.lose = function() {
+
+		var missingLetters = this.remainingLetters;
+ 		for (var i = 1; i <= missingLetters; i++)
+
+		waiting = true;
+		new word();
+
+	}
+
+	
 
 	this.newWord = function(){
 		waiting = false;
